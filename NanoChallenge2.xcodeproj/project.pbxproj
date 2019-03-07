@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E8361DA2231189500134C05 /* Luca.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361D92231189500134C05 /* Luca.storyboard */; };
+		0E8361E0223119D700134C05 /* Denny.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361DF223119D700134C05 /* Denny.storyboard */; };
+		0E8361E2223119E600134C05 /* Vincenzo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361E1223119E600134C05 /* Vincenzo.storyboard */; };
+		0E8361E4223119F700134C05 /* Alfredo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361E3223119F700134C05 /* Alfredo.storyboard */; };
 		521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9AD1223113ED00A04FCC /* AppDelegate.swift */; };
 		521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9AD3223113ED00A04FCC /* ViewController.swift */; };
 		521E9AD7223113ED00A04FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9AD5223113ED00A04FCC /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E8361D92231189500134C05 /* Luca.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Luca.storyboard; sourceTree = "<group>"; };
+		0E8361DF223119D700134C05 /* Denny.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Denny.storyboard; sourceTree = "<group>"; };
+		0E8361E1223119E600134C05 /* Vincenzo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vincenzo.storyboard; sourceTree = "<group>"; };
+		0E8361E3223119F700134C05 /* Alfredo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alfredo.storyboard; sourceTree = "<group>"; };
 		521E9ACE223113ED00A04FCC /* NanoChallenge2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E9AD1223113ED00A04FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		521E9AD3223113ED00A04FCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E8361DB2231189C00134C05 /* Luca */ = {
+			isa = PBXGroup;
+			children = (
+				0E8361D92231189500134C05 /* Luca.storyboard */,
+			);
+			path = Luca;
+			sourceTree = "<group>";
+		};
+		0E8361DC223119B800134C05 /* Alfredo */ = {
+			isa = PBXGroup;
+			children = (
+				0E8361E3223119F700134C05 /* Alfredo.storyboard */,
+			);
+			path = Alfredo;
+			sourceTree = "<group>";
+		};
+		0E8361DD223119BF00134C05 /* Vincenzo */ = {
+			isa = PBXGroup;
+			children = (
+				0E8361E1223119E600134C05 /* Vincenzo.storyboard */,
+			);
+			path = Vincenzo;
+			sourceTree = "<group>";
+		};
+		0E8361DE223119C600134C05 /* Denny */ = {
+			isa = PBXGroup;
+			children = (
+				0E8361DF223119D700134C05 /* Denny.storyboard */,
+			);
+			path = Denny;
+			sourceTree = "<group>";
+		};
 		521E9AC5223113ED00A04FCC = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +94,10 @@
 		521E9AD0223113ED00A04FCC /* NanoChallenge2 */ = {
 			isa = PBXGroup;
 			children = (
+				0E8361DE223119C600134C05 /* Denny */,
+				0E8361DD223119BF00134C05 /* Vincenzo */,
+				0E8361DC223119B800134C05 /* Alfredo */,
+				0E8361DB2231189C00134C05 /* Luca */,
 				521E9AD1223113ED00A04FCC /* AppDelegate.swift */,
 				521E9AD3223113ED00A04FCC /* ViewController.swift */,
 				521E9AD5223113ED00A04FCC /* Main.storyboard */,
@@ -124,7 +168,11 @@
 			files = (
 				521E9ADC223113EF00A04FCC /* LaunchScreen.storyboard in Resources */,
 				521E9AD9223113EF00A04FCC /* Assets.xcassets in Resources */,
+				0E8361E2223119E600134C05 /* Vincenzo.storyboard in Resources */,
 				521E9AD7223113ED00A04FCC /* Main.storyboard in Resources */,
+				0E8361E4223119F700134C05 /* Alfredo.storyboard in Resources */,
+				0E8361DA2231189500134C05 /* Luca.storyboard in Resources */,
+				0E8361E0223119D700134C05 /* Denny.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
