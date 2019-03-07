@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05222830D49CC96251DC7315 /* Pods_NanoChallenge2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35E3DA1EC7B0EB845823B71 /* Pods_NanoChallenge2.framework */; };
 		0E8361DA2231189500134C05 /* Luca.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361D92231189500134C05 /* Luca.storyboard */; };
 		0E8361E0223119D700134C05 /* Denny.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361DF223119D700134C05 /* Denny.storyboard */; };
 		0E8361E2223119E600134C05 /* Vincenzo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361E1223119E600134C05 /* Vincenzo.storyboard */; };
@@ -30,6 +31,9 @@
 		521E9ADB223113EF00A04FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		521E9ADD223113EF00A04FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521E9B0122311BD500A04FCC /* Alfredo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alfredo.storyboard; sourceTree = "<group>"; };
+		D1CC6CFE3BBBB33B679D4A6C /* Pods-NanoChallenge2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge2.release.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2.release.xcconfig"; sourceTree = "<group>"; };
+		D35E3DA1EC7B0EB845823B71 /* Pods_NanoChallenge2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NanoChallenge2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E061DF3A6D8EC22C7FADDA12 /* Pods-NanoChallenge2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05222830D49CC96251DC7315 /* Pods_NanoChallenge2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +77,8 @@
 			children = (
 				521E9AD0223113ED00A04FCC /* NanoChallenge2 */,
 				521E9ACF223113ED00A04FCC /* Products */,
+				B1C519C4021A17EAF6147441 /* Pods */,
+				67EE62BB4A3C0BB9BFF01E48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +115,23 @@
 			path = Alfredo;
 			sourceTree = "<group>";
 		};
+		67EE62BB4A3C0BB9BFF01E48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35E3DA1EC7B0EB845823B71 /* Pods_NanoChallenge2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1C519C4021A17EAF6147441 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E061DF3A6D8EC22C7FADDA12 /* Pods-NanoChallenge2.debug.xcconfig */,
+				D1CC6CFE3BBBB33B679D4A6C /* Pods-NanoChallenge2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 521E9AE0223113EF00A04FCC /* Build configuration list for PBXNativeTarget "NanoChallenge2" */;
 			buildPhases = (
+				E6B350797CC92CD2F1E8B054 /* [CP] Check Pods Manifest.lock */,
 				521E9ACA223113ED00A04FCC /* Sources */,
 				521E9ACB223113ED00A04FCC /* Frameworks */,
 				521E9ACC223113ED00A04FCC /* Resources */,
+				7324C48B0AABACDA6A935B68 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +203,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7324C48B0AABACDA6A935B68 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6B350797CC92CD2F1E8B054 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NanoChallenge2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		521E9ACA223113ED00A04FCC /* Sources */ = {
@@ -328,6 +403,7 @@
 		};
 		521E9AE1223113EF00A04FCC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E061DF3A6D8EC22C7FADDA12 /* Pods-NanoChallenge2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -346,6 +422,7 @@
 		};
 		521E9AE2223113EF00A04FCC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1CC6CFE3BBBB33B679D4A6C /* Pods-NanoChallenge2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
