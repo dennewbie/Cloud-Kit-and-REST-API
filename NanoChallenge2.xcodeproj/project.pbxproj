@@ -19,6 +19,7 @@
 		521E9B0222311BD500A04FCC /* Alfredo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9B0122311BD500A04FCC /* Alfredo.storyboard */; };
 		529437AA22325CA600E0737C /* DennyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529437A922325CA600E0737C /* DennyViewController.swift */; };
 		529437AC2232794500E0737C /* FilmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529437AB2232794500E0737C /* FilmViewController.swift */; };
+		52B8671422347BE0008D2F2E /* YearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8671322347BE0008D2F2E /* YearPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		521E9B0122311BD500A04FCC /* Alfredo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alfredo.storyboard; sourceTree = "<group>"; };
 		529437A922325CA600E0737C /* DennyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DennyViewController.swift; sourceTree = "<group>"; };
 		529437AB2232794500E0737C /* FilmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmViewController.swift; sourceTree = "<group>"; };
+		52B8671322347BE0008D2F2E /* YearPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearPickerView.swift; sourceTree = "<group>"; };
 		D1CC6CFE3BBBB33B679D4A6C /* Pods-NanoChallenge2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge2.release.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2.release.xcconfig"; sourceTree = "<group>"; };
 		D35E3DA1EC7B0EB845823B71 /* Pods_NanoChallenge2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NanoChallenge2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E061DF3A6D8EC22C7FADDA12 /* Pods-NanoChallenge2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				0E8361DF223119D700134C05 /* Denny.storyboard */,
 				529437AB2232794500E0737C /* FilmViewController.swift */,
+				52B8671322347BE0008D2F2E /* YearPickerView.swift */,
 				529437A922325CA600E0737C /* DennyViewController.swift */,
 			);
 			path = Denny;
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				529437AA22325CA600E0737C /* DennyViewController.swift in Sources */,
+				52B8671422347BE0008D2F2E /* YearPickerView.swift in Sources */,
 				521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */,
 				529437AC2232794500E0737C /* FilmViewController.swift in Sources */,
 				521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */,

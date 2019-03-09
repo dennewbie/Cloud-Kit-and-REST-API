@@ -9,10 +9,6 @@
 import UIKit
 
 struct Film: Decodable {
-//    let id: Int?
-//    let name: String?
-//    let link: String?
-//    let imageUrl: String?
     let Title: String
     let Year: String
     let Rated: String
@@ -27,9 +23,20 @@ struct Film: Decodable {
     let Country: String
     let Awards: String
     let Poster: String
+    let Ratings: [Ratings]
+    let imdbRating: String
+    let DVD: String
+    let BoxOffice: String
+    let Production: String
+    let Website: String
 }
 
-class FilmViewController: UIViewController {
+struct Ratings: Decodable {
+    let Source: String
+    let Value: String
+}
+
+class FilmViewController: UIViewController, UITextFieldDelegate {
 
     let scrollViewFilm: UIScrollView = {
         let v = UIScrollView()
@@ -43,6 +50,11 @@ class FilmViewController: UIViewController {
     private var searchButton = UIButton()
     private var resultLabel = UILabel()
     let roundesSquare = UIView()
+    private var posterImage = UIImageView()
+    private var preResultLabel = UILabel()
+    private var textFieldDate = UITextField()
+    let calendarOnlyYear = YearPickerView()
+    private var yearLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +63,7 @@ class FilmViewController: UIViewController {
         setupTitleLabel()
         setupResultLabel()
         setupTextField()
+        setupDatePicker()
         setupButton()
     }
     
@@ -61,22 +74,30 @@ class FilmViewController: UIViewController {
         scrollViewFilm.topAnchor.constraint(equalTo: view.topAnchor, constant: 8.0).isActive = true
         scrollViewFilm.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8.0).isActive = true
         scrollViewFilm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0).isActive = true
-        scrollViewFilm.contentSize = CGSize(width: (self.view.frame.width - 20), height: (self.view.frame.height) + 300)
+        scrollViewFilm.contentSize = CGSize(width: (self.view.frame.width - 20), height: (self.view.frame.height) + 1200)
     }
     
     private func setupTitleLabel() {
-        titleLabel.frame = CGRect(x: 20, y: 100, width: 100, height: 50)
+        titleLabel.frame = CGRect(x: 20, y: 30, width: 100, height: 50)
         titleLabel.text = "Title"
         titleLabel.font = titleLabel.font.withSize(20)
         titleLabel.layer.cornerRadius = 15
         titleLabel.layer.masksToBounds = true
         titleLabel.textColor = .black
         
+        yearLabel.frame = CGRect(x: 20, y: 140, width: self.view.frame.width, height: 30)
+        yearLabel.text = "Year"
+        yearLabel.font = titleLabel.font.withSize(20)
+        yearLabel.layer.cornerRadius = 15
+        yearLabel.layer.masksToBounds = true
+        yearLabel.textColor = .black
+        
         scrollViewFilm.addSubview(titleLabel)
+        scrollViewFilm.addSubview(yearLabel)
     }
     
     private func setupTextField() {
-        searchFilmTextField.frame = CGRect(x: 20, y: 150, width: self.view.frame.width - 100, height: 30)
+        searchFilmTextField.frame = CGRect(x: 20, y: 100, width: self.view.frame.width - 100, height: 30)
         searchFilmTextField.placeholder = "Write here a title film..."
         searchFilmTextField.borderStyle = .roundedRect
         searchFilmTextField.minimumFontSize = 20
@@ -84,6 +105,33 @@ class FilmViewController: UIViewController {
         searchFilmTextField.returnKeyType = .done
         
         scrollViewFilm.addSubview(searchFilmTextField)
+    }
+    
+    private func setupDatePicker(){
+        createGestureRecognizer()
+        
+        textFieldDate.frame = CGRect(x: 20, y: 180, width: self.view.frame.width - 100, height: 30)
+        textFieldDate.placeholder = "Optional: Choose a year..."
+        textFieldDate.resignFirstResponder()
+        textFieldDate.inputView = calendarOnlyYear
+        textFieldDate.borderStyle = .roundedRect
+        textFieldDate.delegate = self
+        
+        calendarOnlyYear.onDateSelected = { (year: Int) in
+            let string = String(format: "%02d", year)
+            self.textFieldDate.text = "\(string)"
+            
+        }
+        scrollViewFilm.addSubview(textFieldDate)
+    }
+    
+    private func createGestureRecognizer(){
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissViewOnTapGesture(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func dismissViewOnTapGesture(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
     }
     
     private func setupButton() {
@@ -98,21 +146,27 @@ class FilmViewController: UIViewController {
     }
     
     private func setupResultLabel() {
-        roundesSquare.frame = CGRect(x: 20, y: (self.view.frame.height / 2) - 100, width: self.view.frame.width - 50, height: (self.view.frame.height) - 100)
-        roundesSquare.backgroundColor = UIColor.darkGray
+        roundesSquare.frame = CGRect(x: 20, y: (self.view.frame.height / 2) - 100, width: self.view.frame.width - 50, height: (self.view.frame.height) + 750)
+        roundesSquare.backgroundColor = UIColor.black
         roundesSquare.layer.cornerRadius = 15
         
-        resultLabel.frame = CGRect(x: 10, y: 10, width: roundesSquare.frame.width - 5, height: roundesSquare.frame.height)
+        resultLabel.frame = CGRect(x: 10, y: posterImage.frame.maxY + 80, width: roundesSquare.frame.width - 5, height: roundesSquare.frame.height)
+        
         resultLabel.text = "Here you will see the result..."
         resultLabel.font = titleLabel.font.withSize(20)
-        resultLabel.layer.cornerRadius = 15
-        resultLabel.layer.masksToBounds = true
-        resultLabel.numberOfLines = 30
+        resultLabel.numberOfLines = 50
         resultLabel.textColor = .white
         
+        
+        
+        preResultLabel.frame = CGRect(x: self.view.frame.width / 2 - 70 , y: 10, width: 100, height: 30)
+        preResultLabel.textAlignment = .center
+        preResultLabel.text = "Result"
+        preResultLabel.textColor = .white
+        
+        roundesSquare.addSubview(preResultLabel)
         roundesSquare.addSubview(resultLabel)
         scrollViewFilm.addSubview(roundesSquare)
-        
     }
     
     @objc private func searchForFilm() {
@@ -123,11 +177,20 @@ class FilmViewController: UIViewController {
             errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(errorAlert, animated: true)
         } else {
-
-            let generateUserFilm = searchFilmTextField.text
-            let filteredFilm = generateUserFilm!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
-            jsonURL.append(filteredFilm)
-            jsonURL.append("&apikey=5f784705")
+            if textFieldDate.text != "" {
+                
+                let generateUserFilm = searchFilmTextField.text
+                let generateUserDate = "&y=\(textFieldDate.text!)"
+                let filteredFilm = generateUserFilm!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+                jsonURL.append(filteredFilm)
+                jsonURL.append(generateUserDate)
+                jsonURL.append("&apikey=5f784705")
+            } else {
+                let generateUserFilm = searchFilmTextField.text
+                let filteredFilm = generateUserFilm!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+                jsonURL.append(filteredFilm)
+                jsonURL.append("&apikey=5f784705")
+            }
         }
         
         print(jsonURL)
@@ -138,21 +201,50 @@ class FilmViewController: UIViewController {
             guard let data = data else { return }
             do {
                 let films = try JSONDecoder().decode(Film.self, from: data)
-//                for film in films {
-////                    print(film)
-//                    print(film.title)
-//                }
                 print(films)
                 DispatchQueue.main.async {
                     self.updateResultLabel(films: films)
                 }
             } catch let jsonError {
                 print("Error serializin json", jsonError)
+                DispatchQueue.main.async {
+                    self.errorUpdateLabel()
+                }
             }
             }.resume()
     }
     
     private func updateResultLabel(films: Film) {
-        resultLabel.text = "Result:\n\nTitle: \(films.Title)\nYear: \(films.Year)\nRated: \(films.Rated)\nReleased: \(films.Released)\n\nRuntime: \(films.Runtime)\nGenre: \(films.Genre)\nDirector: \(films.Director)\nWriter: \(films.Writer)\nActors: \(films.Actors)\n\nPlot: \(films.Plot)\nLanguage: \(films.Language)\nAwards: \(films.Awards)\nPoster: \(films.Poster)"
+        
+        resultLabel.text = "Title: \(films.Title)\nYear: \(films.Year)\nRated: \(films.Rated)\nReleased: \(films.Released)\n\nRuntime: \(films.Runtime)\nGenre: \(films.Genre)\nDirector: \(films.Director)\nWriter: \(films.Writer)\nActors: \(films.Actors)\n\nPlot: \(films.Plot)\nLanguage: \(films.Language)\nAwards: \(films.Awards)\nIMDB Rating: \(films.imdbRating)\nDVD: \(films.DVD)\nBoxOffice: \(films.BoxOffice)\nProduction: \(films.Production)\nWebsite: \(films.Website)\n\n\t\t\t\tRatings\n"
+        for rating in films.Ratings {
+            resultLabel.text?.append("Source: \(rating.Source)\nValue: \(rating.Value)\n\n")
+        }
+        
+        posterImage.frame = CGRect(x: self.view.center.x / 2 - 20, y: roundesSquare.frame.minY - 300 , width: 200, height: 250)
+        
+        
+        let urlImage = URL(string: "\(films.Poster)")!
+        var dataImage = Data()
+        do {
+            dataImage = try Data (contentsOf: urlImage)
+        }catch{
+            print("Errore downlaod")
+            resultLabel.text = "Errore nel download dell'immagine.\n\n\(resultLabel.text!)"
+        }
+        posterImage.image = UIImage(data: dataImage)
+        posterImage.layer.cornerRadius = 15
+        posterImage.layer.masksToBounds = true
+        
+        roundesSquare.addSubview(posterImage)
+    }
+    
+    private func errorUpdateLabel() {
+        resultLabel.text = "There was an error searching for this film... Check what you wrote.\nMaybe the server is off, try later."
+        posterImage.removeFromSuperview()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
     }
 }
