@@ -206,6 +206,12 @@ class VincenzoViewController : UIViewController {
                     }
                     else {
                         self.listOfArticlesLabel.isHidden = true
+                        let alert = UIAlertController(title: "No results found!", message: "Try to change your keywords for this search. ", preferredStyle: .alert)
+                        let okAct = UIAlertAction(title: "Ok", style: .default, handler: { (okAct) in
+                            alert.dismiss(animated: true, completion: nil)
+                        })
+                        alert.addAction(okAct)
+                        self.present(alert, animated: true, completion: nil)
                     }
                 }
                 //Catch possible errors in decoding

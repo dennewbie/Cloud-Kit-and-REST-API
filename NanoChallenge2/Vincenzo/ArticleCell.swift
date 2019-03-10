@@ -17,6 +17,8 @@ class ArticleCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.linkButton.layer.cornerRadius = 15
+        self.previewImage.layer.cornerRadius = 15
     }
 
     @IBAction func goToLink(_ sender: Any) {
