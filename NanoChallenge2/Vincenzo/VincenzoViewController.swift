@@ -198,7 +198,6 @@ class VincenzoViewController : UIViewController {
                     print("Articles JSON decoded")
                     self.activityIndicator.stopAnimating()
                     self.searchButton.isHidden = false
-                    self.textArea.text = String(articlesData.num_results)
                     self.articlesNumber = articlesData.num_results
                     if (self.articlesNumber > 0){
                         self.listOfArticlesLabel.isHidden = false
@@ -245,10 +244,16 @@ extension VincenzoViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = articlesCollectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
         if(articlesNumber > 0){
-            cell.linkButton.setTitle(self.articles[indexPath.row].headline, for: .normal)
+            cell.linkButton.setTitle(self.articles[indexPath.row].link.suggested_link_text, for: .normal)
             cell.typeLabel.text = self.articles[indexPath.row].link.type.uppercased() + ":"
             cell.articleLink = self.articles[indexPath.row].link.url
+            if ( self.articles[indexPath.row].multimedia?.src != nil){
+                cell.previewImage.dowloadFromServer(link: self.articles[indexPath.row].multimedia!.src, contentMode: .scaleAspectFit)
+                }
+            else {
+                cell.previewImage.dowloadFromServer(link: "http://www.nytimes.com/services/mobile/img/ios-newsreader-icon.png", contentMode: .scaleAspectFit)
             }
+        }
         return cell
     }
     

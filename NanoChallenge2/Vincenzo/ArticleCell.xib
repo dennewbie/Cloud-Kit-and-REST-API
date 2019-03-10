@@ -13,24 +13,25 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArticleCell" id="gTV-IL-0wX" customClass="ArticleCell" customModule="NanoChallenge2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="183"/>
+            <rect key="frame" x="0.0" y="0.0" width="361" height="245"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="183"/>
+                <rect key="frame" x="0.0" y="0.0" width="361" height="245"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H9C-wo-7B1">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="183"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9C-wo-7B1">
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="245"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type of the link" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNb-VI-ZCn">
-                                <rect key="frame" x="34" y="8" width="149" height="21"/>
+                                <rect key="frame" x="112" y="8" width="149" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-Cz-5oP">
-                                <rect key="frame" x="34" y="77" width="232" height="28"/>
+                                <rect key="frame" x="20" y="37" width="333" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Link to the article through headline"/>
@@ -38,24 +39,23 @@
                                     <action selector="goToLink:" destination="gTV-IL-0wX" eventType="touchUpInside" id="CpD-Bz-wxD"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ttf-1Y-9gX">
+                                <rect key="frame" x="46" y="66" width="280" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
             </view>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="H9C-wo-7B1" secondAttribute="bottom" id="6Yg-EB-e8X"/>
-                <constraint firstItem="H9C-wo-7B1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7nw-rM-FP8"/>
-                <constraint firstItem="H9C-wo-7B1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="H3u-iU-hVl"/>
-                <constraint firstAttribute="trailing" secondItem="H9C-wo-7B1" secondAttribute="trailing" id="Vbe-p9-PMg"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="300" height="183"/>
+            <size key="customSize" width="361" height="245"/>
             <connections>
                 <outlet property="linkButton" destination="XeQ-Cz-5oP" id="Pc4-tV-juj"/>
+                <outlet property="previewImage" destination="ttf-1Y-9gX" id="B8U-2P-A5v"/>
                 <outlet property="typeLabel" destination="cNb-VI-ZCn" id="JDO-PH-qc3"/>
             </connections>
-            <point key="canvasLocation" x="-3.2000000000000002" y="115.59220389805098"/>
+            <point key="canvasLocation" x="45.600000000000001" y="143.47826086956522"/>
         </collectionViewCell>
     </objects>
 </document>

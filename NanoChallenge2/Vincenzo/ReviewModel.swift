@@ -22,13 +22,23 @@ struct Link : Decodable {
 }
 
 
+struct Multimedia : Decodable {
+    var src : String
+    
+}
+
+
 struct NYTReview : Decodable {
     var headline : String
+    var display_title : String
     var link : Link
+    var multimedia : Multimedia?
     
-    init(title : String,link : Link) {
+    init(title : String,link : Link ,displayTitle: String,multimedia: Multimedia) {
         self.headline =  title
         self.link = link
+        self.display_title = displayTitle
+        self.multimedia = multimedia
     }
     
 }
