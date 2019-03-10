@@ -11,6 +11,10 @@
 		0E8361DA2231189500134C05 /* Luca.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361D92231189500134C05 /* Luca.storyboard */; };
 		0E8361E0223119D700134C05 /* Denny.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361DF223119D700134C05 /* Denny.storyboard */; };
 		0E8361E2223119E600134C05 /* Vincenzo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361E1223119E600134C05 /* Vincenzo.storyboard */; };
+		4D3D3B322232623800DC1F87 /* VincenzoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D3B312232623800DC1F87 /* VincenzoViewController.swift */; };
+		4D3D3B3422326C4500DC1F87 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D3B3322326C4500DC1F87 /* ReviewModel.swift */; };
+		4D3D3B3722350B9D00DC1F87 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D3B3522350B9D00DC1F87 /* ArticleCell.swift */; };
+		4D3D3B3822350B9D00DC1F87 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3D3B3622350B9D00DC1F87 /* ArticleCell.xib */; };
 		521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9AD1223113ED00A04FCC /* AppDelegate.swift */; };
 		521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9AD3223113ED00A04FCC /* ViewController.swift */; };
 		521E9AD7223113ED00A04FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9AD5223113ED00A04FCC /* Main.storyboard */; };
@@ -23,6 +27,10 @@
 		0E8361D92231189500134C05 /* Luca.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Luca.storyboard; sourceTree = "<group>"; };
 		0E8361DF223119D700134C05 /* Denny.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Denny.storyboard; sourceTree = "<group>"; };
 		0E8361E1223119E600134C05 /* Vincenzo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vincenzo.storyboard; sourceTree = "<group>"; };
+		4D3D3B312232623800DC1F87 /* VincenzoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VincenzoViewController.swift; sourceTree = "<group>"; };
+		4D3D3B3322326C4500DC1F87 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		4D3D3B3522350B9D00DC1F87 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		4D3D3B3622350B9D00DC1F87 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		521E9ACE223113ED00A04FCC /* NanoChallenge2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E9AD1223113ED00A04FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		521E9AD3223113ED00A04FCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				0E8361E1223119E600134C05 /* Vincenzo.storyboard */,
+				4D3D3B312232623800DC1F87 /* VincenzoViewController.swift */,
+				4D3D3B3322326C4500DC1F87 /* ReviewModel.swift */,
+				4D3D3B3522350B9D00DC1F87 /* ArticleCell.swift */,
+				4D3D3B3622350B9D00DC1F87 /* ArticleCell.xib */,
 			);
 			path = Vincenzo;
 			sourceTree = "<group>";
@@ -196,6 +208,7 @@
 				521E9AD9223113EF00A04FCC /* Assets.xcassets in Resources */,
 				0E8361E2223119E600134C05 /* Vincenzo.storyboard in Resources */,
 				521E9AD7223113ED00A04FCC /* Main.storyboard in Resources */,
+				4D3D3B3822350B9D00DC1F87 /* ArticleCell.xib in Resources */,
 				521E9B0222311BD500A04FCC /* Alfredo.storyboard in Resources */,
 				0E8361DA2231189500134C05 /* Luca.storyboard in Resources */,
 				0E8361E0223119D700134C05 /* Denny.storyboard in Resources */,
@@ -260,6 +273,9 @@
 			files = (
 				521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */,
 				521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */,
+				4D3D3B322232623800DC1F87 /* VincenzoViewController.swift in Sources */,
+				4D3D3B3722350B9D00DC1F87 /* ArticleCell.swift in Sources */,
+				4D3D3B3422326C4500DC1F87 /* ReviewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
