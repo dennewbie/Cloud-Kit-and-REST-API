@@ -17,6 +17,8 @@
 		521E9AD9223113EF00A04FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521E9AD8223113EF00A04FCC /* Assets.xcassets */; };
 		521E9ADC223113EF00A04FCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9ADA223113EF00A04FCC /* LaunchScreen.storyboard */; };
 		521E9B0222311BD500A04FCC /* Alfredo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9B0122311BD500A04FCC /* Alfredo.storyboard */; };
+		52603962223582D100A36ECC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52603961223582D100A36ECC /* CloudKit.framework */; };
+		5260396C223595A900A36ECC /* CloudKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260396B223595A900A36ECC /* CloudKitViewController.swift */; };
 		529437AA22325CA600E0737C /* DennyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529437A922325CA600E0737C /* DennyViewController.swift */; };
 		529437AC2232794500E0737C /* FilmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529437AB2232794500E0737C /* FilmViewController.swift */; };
 		52B8671422347BE0008D2F2E /* YearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8671322347BE0008D2F2E /* YearPickerView.swift */; };
@@ -34,6 +36,9 @@
 		521E9ADB223113EF00A04FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		521E9ADD223113EF00A04FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521E9B0122311BD500A04FCC /* Alfredo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alfredo.storyboard; sourceTree = "<group>"; };
+		5260393422352F2D00A36ECC /* NanoChallenge2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NanoChallenge2.entitlements; sourceTree = "<group>"; };
+		52603961223582D100A36ECC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5260396B223595A900A36ECC /* CloudKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitViewController.swift; sourceTree = "<group>"; };
 		529437A922325CA600E0737C /* DennyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DennyViewController.swift; sourceTree = "<group>"; };
 		529437AB2232794500E0737C /* FilmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmViewController.swift; sourceTree = "<group>"; };
 		52B8671322347BE0008D2F2E /* YearPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearPickerView.swift; sourceTree = "<group>"; };
@@ -48,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05222830D49CC96251DC7315 /* Pods_NanoChallenge2.framework in Frameworks */,
+				52603962223582D100A36ECC /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +82,7 @@
 				0E8361DF223119D700134C05 /* Denny.storyboard */,
 				529437AB2232794500E0737C /* FilmViewController.swift */,
 				52B8671322347BE0008D2F2E /* YearPickerView.swift */,
+				5260396B223595A900A36ECC /* CloudKitViewController.swift */,
 				529437A922325CA600E0737C /* DennyViewController.swift */,
 			);
 			path = Denny;
@@ -102,6 +109,7 @@
 		521E9AD0223113ED00A04FCC /* NanoChallenge2 */ = {
 			isa = PBXGroup;
 			children = (
+				5260393422352F2D00A36ECC /* NanoChallenge2.entitlements */,
 				0E8361DE223119C600134C05 /* Denny */,
 				0E8361DD223119BF00134C05 /* Vincenzo */,
 				0E8361DB2231189C00134C05 /* Luca */,
@@ -127,6 +135,7 @@
 		67EE62BB4A3C0BB9BFF01E48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52603961223582D100A36ECC /* CloudKit.framework */,
 				D35E3DA1EC7B0EB845823B71 /* Pods_NanoChallenge2.framework */,
 			);
 			name = Frameworks;
@@ -175,6 +184,14 @@
 				TargetAttributes = {
 					521E9ACD223113ED00A04FCC = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -272,6 +289,7 @@
 				521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */,
 				529437AC2232794500E0737C /* FilmViewController.swift in Sources */,
 				521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */,
+				5260396C223595A900A36ECC /* CloudKitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +436,7 @@
 			baseConfigurationReference = E061DF3A6D8EC22C7FADDA12 /* Pods-NanoChallenge2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NanoChallenge2/NanoChallenge2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NB4DXNB5ZM;
 				INFOPLIST_FILE = NanoChallenge2/Info.plist;
@@ -437,6 +456,7 @@
 			baseConfigurationReference = D1CC6CFE3BBBB33B679D4A6C /* Pods-NanoChallenge2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NanoChallenge2/NanoChallenge2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NB4DXNB5ZM;
 				INFOPLIST_FILE = NanoChallenge2/Info.plist;
