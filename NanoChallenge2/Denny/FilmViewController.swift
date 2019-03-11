@@ -8,6 +8,12 @@
 
 import UIKit
 import SystemConfiguration
+import CloudKit
+
+
+let databaseFilm = CKContainer.default().publicCloudDatabase
+var generatedUserFilm = String()
+
 
 struct Film: Decodable {
     let Title: String
@@ -26,10 +32,10 @@ struct Film: Decodable {
     let Poster: String
     let Ratings: [Ratings]
     let imdbRating: String
-    let DVD: String
-    let BoxOffice: String
-    let Production: String
-    let Website: String
+    let DVD: String?
+    let BoxOffice: String?
+    let Production: String?
+    let Website: String?
 }
 
 struct Ratings: Decodable {
@@ -57,6 +63,8 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
     let calendarOnlyYear = YearPickerView()
     private var yearLabel = UILabel()
     
+    var temp: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,18 +83,18 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
         scrollViewFilm.topAnchor.constraint(equalTo: view.topAnchor, constant: 8.0).isActive = true
         scrollViewFilm.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8.0).isActive = true
         scrollViewFilm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0).isActive = true
-        scrollViewFilm.contentSize = CGSize(width: (self.view.frame.width - 20), height: (self.view.frame.height) + 1200)
+        scrollViewFilm.contentSize = CGSize(width: (self.view.frame.width - 20), height: (self.view.frame.height) + 1100)
     }
     
     private func setupTitleLabel() {
-        titleLabel.frame = CGRect(x: 20, y: 30, width: 100, height: 50)
+        titleLabel.frame = CGRect(x: 20, y: 20, width: self.view.frame.width, height: 50)
         titleLabel.text = "Title"
         titleLabel.font = titleLabel.font.withSize(20)
         titleLabel.layer.cornerRadius = 15
         titleLabel.layer.masksToBounds = true
         titleLabel.textColor = .black
         
-        yearLabel.frame = CGRect(x: 20, y: 140, width: self.view.frame.width, height: 30)
+        yearLabel.frame = CGRect(x: 20, y: 120, width: self.view.frame.width, height: 50)
         yearLabel.text = "Year"
         yearLabel.font = titleLabel.font.withSize(20)
         yearLabel.layer.cornerRadius = 15
@@ -98,12 +106,13 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupTextField() {
-        searchFilmTextField.frame = CGRect(x: 20, y: 100, width: self.view.frame.width - 100, height: 30)
+        searchFilmTextField.frame = CGRect(x: 20, y: 70, width: self.view.frame.width - 60, height: 40)
         searchFilmTextField.placeholder = "Write here a title film..."
         searchFilmTextField.borderStyle = .roundedRect
         searchFilmTextField.minimumFontSize = 20
         searchFilmTextField.layer.cornerRadius = 15
         searchFilmTextField.returnKeyType = .done
+        searchFilmTextField.clearButtonMode = .always
         
         scrollViewFilm.addSubview(searchFilmTextField)
     }
@@ -111,19 +120,37 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
     private func setupDatePicker(){
         createGestureRecognizer()
         
-        textFieldDate.frame = CGRect(x: 20, y: 180, width: self.view.frame.width - 100, height: 30)
+        textFieldDate.frame = CGRect(x: 20, y: 180, width: self.view.frame.width - 60, height: 40)
         textFieldDate.placeholder = "Optional: Choose a year..."
         textFieldDate.resignFirstResponder()
+        textFieldDate.clearButtonMode = .always
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.sizeToFit()
+        
+        
+        let cancelButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(dismissPicker))
+        toolBar.setItems([cancelButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        textFieldDate.inputAccessoryView = toolBar
+        
+        
+        
         textFieldDate.inputView = calendarOnlyYear
         textFieldDate.borderStyle = .roundedRect
         textFieldDate.delegate = self
-        
+        calendarOnlyYear.showsSelectionIndicator = true
         calendarOnlyYear.onDateSelected = { (year: Int) in
             let string = String(format: "%02d", year)
             self.textFieldDate.text = "\(string)"
-            
         }
         scrollViewFilm.addSubview(textFieldDate)
+    }
+    
+    @objc private func dismissPicker() {
+        self.view.endEditing(true)
+        textFieldDate.text = ""
     }
     
     private func createGestureRecognizer(){
@@ -180,15 +207,15 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
         } else {
             if textFieldDate.text != "" {
                 
-                let generateUserFilm = searchFilmTextField.text
-                let generateUserDate = "&y=\(textFieldDate.text!)"
-                let filteredFilm = generateUserFilm!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+                let generatedUserFilm = searchFilmTextField.text
+                let generatedUserDate = "&y=\(textFieldDate.text!)"
+                let filteredFilm = generatedUserFilm!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
                 jsonURL.append(filteredFilm)
-                jsonURL.append(generateUserDate)
+                jsonURL.append(generatedUserDate)
                 jsonURL.append("&apikey=5f784705")
             } else {
-                let generateUserFilm = searchFilmTextField.text
-                let filteredFilm = generateUserFilm!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+                generatedUserFilm = searchFilmTextField.text!
+                let filteredFilm = generatedUserFilm.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
                 jsonURL.append(filteredFilm)
                 jsonURL.append("&apikey=5f784705")
             }
@@ -208,7 +235,7 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
                 return }
             do {
                 let films = try JSONDecoder().decode(Film.self, from: data)
-                print(films)
+//                print(films)
                 DispatchQueue.main.async {
                     self.updateResultLabel(films: films)
                 }
@@ -223,9 +250,9 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
     
     private func updateResultLabel(films: Film) {
         
-        resultLabel.text = "Title: \(films.Title)\nYear: \(films.Year)\nRated: \(films.Rated)\nReleased: \(films.Released)\n\nRuntime: \(films.Runtime)\nGenre: \(films.Genre)\nDirector: \(films.Director)\nWriter: \(films.Writer)\nActors: \(films.Actors)\n\nPlot: \(films.Plot)\nLanguage: \(films.Language)\nAwards: \(films.Awards)\nIMDB Rating: \(films.imdbRating)\nDVD: \(films.DVD)\nBoxOffice: \(films.BoxOffice)\nProduction: \(films.Production)\nWebsite: \(films.Website)\n\n\t\t\t\tRatings\n"
+        resultLabel.text = "Title: \(films.Title)\nYear: \(films.Year)\nRated: \(films.Rated)\nReleased: \(films.Released)\n\nRuntime: \(films.Runtime)\nGenre: \(films.Genre)\nDirector: \(films.Director)\nWriter: \(films.Writer)\nActors: \(films.Actors)\n\nPlot: \(films.Plot)\nLanguage: \(films.Language)\nAwards: \(films.Awards)\nIMDB Rating: \(films.imdbRating ?? "N/A")\nDVD: \(films.DVD ?? "N/A")\nBoxOffice: \(films.BoxOffice ?? "N/A")\nProduction: \(films.Production ?? "N/A")\nWebsite: \(films.Website ?? "N/A")\n\n\t\t\t\tRatings\n"
         for rating in films.Ratings {
-            resultLabel.text?.append("Source: \(rating.Source)\nValue: \(rating.Value)\n\n")
+            resultLabel.text?.append("Source: \(rating.Source ?? "N/A")\nValue: \(rating.Value ?? "N/A")\n\n")
         }
         
         posterImage.frame = CGRect(x: self.view.center.x / 2 - 20, y: roundesSquare.frame.minY - 300 , width: 200, height: 250)
@@ -235,14 +262,21 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
         var dataImage = Data()
         do {
             dataImage = try Data (contentsOf: urlImage)
+            temp = false
         }catch{
             print("Errore downlaod")
-            resultLabel.text = "Errore nel download dell'immagine.\n\n\(resultLabel.text!)"
+            posterImage.image = UIImage(named: "No_Image_Available_Denny")
+            temp = true
         }
-        posterImage.image = UIImage(data: dataImage)
+        
+        if temp == false {
+            posterImage.image = UIImage(data: dataImage)
+        }
         posterImage.layer.cornerRadius = 15
         posterImage.layer.masksToBounds = true
         
+//        saveToCloud(noteText: generatedUserFilm, imageFilm: posterImage)
+        saveToCloud(noteText: generatedUserFilm, imageFilm: urlImage, films: films)
         roundesSquare.addSubview(posterImage)
     }
     
@@ -253,5 +287,23 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
+    }
+    
+    func saveToCloud(noteText: String, imageFilm: URL, films: Film) {
+        let newFilm = CKRecord(recordType: "Book")
+        newFilm.setValue(noteText, forKey: "title")
+        print(imageFilm)
+        let urlString = imageFilm.absoluteString
+        newFilm.setValue(urlString, forKey: "imageURL")
+        newFilm.setValue(films.Year, forKey: "year")
+        newFilm.setValue(films.Plot, forKey: "plot")
+        
+        print(urlString)
+        
+        databaseFilm.save(newFilm, completionHandler: {( recordFilm, localError) in
+            print(localError)
+            guard recordFilm != nil else { print("Something wrong"); return }
+            print("Save record with film")
+        })
     }
 }

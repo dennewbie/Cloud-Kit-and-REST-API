@@ -22,28 +22,45 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="filmCell" id="4IQ-gc-nIt" customClass="FilmTableViewCell" customModule="NanoChallenge2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellFilm" rowHeight="200" id="4IQ-gc-nIt" customClass="CloudKitTableViewCell" customModule="NanoChallenge2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4IQ-gc-nIt" id="mOd-rD-661">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZZ-Rb-wg3">
-                                                    <rect key="frame" x="40" y="16" width="334" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j71-Qy-gFx">
+                                                    <rect key="frame" x="160" y="21" width="234" height="158"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XzS-lp-8Eh">
+                                                    <rect key="frame" x="20" y="10" width="110" height="179.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="O7y-o1-AQC"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TZZ-Rb-wg3" firstAttribute="top" secondItem="mOd-rD-661" secondAttribute="topMargin" constant="5" id="Sz5-mE-ydG"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="TZZ-Rb-wg3" secondAttribute="trailing" constant="20" id="ZVE-NE-SF4"/>
-                                                <constraint firstItem="TZZ-Rb-wg3" firstAttribute="leading" secondItem="mOd-rD-661" secondAttribute="leadingMargin" constant="20" id="pqe-e5-Xza"/>
+                                                <constraint firstItem="XzS-lp-8Eh" firstAttribute="leading" secondItem="mOd-rD-661" secondAttribute="leading" constant="20" id="2tS-dk-6Lt"/>
+                                                <constraint firstItem="j71-Qy-gFx" firstAttribute="top" secondItem="mOd-rD-661" secondAttribute="topMargin" constant="10" id="FN1-Tu-C96"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="j71-Qy-gFx" secondAttribute="trailing" id="Ocj-Z7-Wfl"/>
+                                                <constraint firstItem="j71-Qy-gFx" firstAttribute="leading" secondItem="XzS-lp-8Eh" secondAttribute="trailing" constant="30" id="Ysl-og-Q4M"/>
+                                                <constraint firstAttribute="bottom" secondItem="XzS-lp-8Eh" secondAttribute="bottom" constant="10" id="aZt-GV-Baf"/>
+                                                <constraint firstItem="XzS-lp-8Eh" firstAttribute="top" secondItem="mOd-rD-661" secondAttribute="top" constant="10" id="gmV-gL-qh2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="j71-Qy-gFx" secondAttribute="bottom" constant="10" id="zDl-Xb-jdj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblTitle" destination="TZZ-Rb-wg3" id="svK-Zz-KRv"/>
+                                            <outlet property="imgFilm" destination="XzS-lp-8Eh" id="YeK-zb-kaL"/>
+                                            <outlet property="labelTitle" destination="j71-Qy-gFx" id="yRF-I9-cft"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -58,13 +75,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Uf-mg-U6H"/>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="rQB-rz-2UO"/>
+                    <navigationItem key="navigationItem" title="History" id="rQB-rz-2UO">
+                        <barButtonItem key="rightBarButtonItem" title="Reload" id="PFn-Sw-JJp">
+                            <connections>
+                                <action selector="reloadData:" destination="obM-UP-gUY" id="VhG-lS-nag"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cloudKitTableView" destination="2TX-RF-Y5X" id="zy1-zX-xH4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTP-9I-Fnl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1892.753623188406" y="131.91964285714286"/>
         </scene>
-        <!--Film View Controller-->
+        <!--Search-->
         <scene sceneID="vg2-Vd-sBD">
             <objects>
                 <viewController id="rcv-MK-8K6" customClass="FilmViewController" customModule="NanoChallenge2" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,11 +100,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Yr9-1z-ZNO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="rMr-Ty-KgM"/>
+                    <navigationItem key="navigationItem" title="Search" id="wVn-KX-Fdt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="607-KB-r9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="848"/>
+            <point key="canvasLocation" x="1892.753623188406" y="847.76785714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gNX-Yh-rLa">
@@ -86,12 +112,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9oK-k1-pof" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bRw-Tu-Pva">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="4mP-wv-TOM" kind="relationship" relationship="viewControllers" id="t1w-qO-qf3"/>
-                        <segue destination="rcv-MK-8K6" kind="relationship" relationship="viewControllers" id="bN5-9h-3Uv"/>
+                        <segue destination="Ny8-lI-MNa" kind="relationship" relationship="viewControllers" id="bN5-9h-3Uv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLn-fQ-I1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,6 +143,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1l-eX-NS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="982.60869565217399" y="131.91964285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x4g-AG-Zxo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ny8-lI-MNa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="rMr-Ty-KgM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c8E-so-7Ic">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rcv-MK-8K6" kind="relationship" relationship="rootViewController" id="L4j-CF-fWc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGB-K9-kiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.60869565217399" y="847.76785714285711"/>
         </scene>
     </scenes>
 </document>
