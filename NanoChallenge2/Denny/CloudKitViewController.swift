@@ -63,7 +63,6 @@ class CloudKitViewController: UIViewController {
         resultLabel.frame = CGRect(x: 30, y: self.readButton.frame.maxY + 50, width: self.view.frame.width - 50, height: 300)
         resultLabel.backgroundColor = .black
         resultLabel.textColor = .white
-        resultLabel.text = "Ciao"
         resultLabel.numberOfLines = 30
         resultLabel.layer.cornerRadius = 15
         resultLabel.layer.masksToBounds = true
