@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SystemConfiguration
 
 struct Film: Decodable {
     let Title: String
@@ -198,7 +199,13 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
         guard let myURL = URL(string: jsonURL) else { print("Error URL"); return }
         
         URLSession.shared.dataTask(with: myURL) { (data, response, err) in
-            guard let data = data else { return }
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    let errorAlert = UIAlertController(title: "Error", message: "Ops... There's a problem with internet connection or the server is offline.", preferredStyle: .alert)
+                    errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(errorAlert, animated: true)
+                }
+                return }
             do {
                 let films = try JSONDecoder().decode(Film.self, from: data)
                 print(films)
