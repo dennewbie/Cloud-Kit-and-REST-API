@@ -21,6 +21,7 @@
 		0E8361E2223119E600134C05 /* Vincenzo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361E1223119E600134C05 /* Vincenzo.storyboard */; };
 		0E8361E62231284F00134C05 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8361E52231284F00134C05 /* HomepageViewController.swift */; };
 		0E8361E822343BED00134C05 /* MovieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8361E722343BED00134C05 /* MovieDataModel.swift */; };
+		0EB75BD62236683C00BA1ADF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB75BD52236683C00BA1ADF /* CloudKit.framework */; };
 		521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9AD1223113ED00A04FCC /* AppDelegate.swift */; };
 		521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9AD3223113ED00A04FCC /* ViewController.swift */; };
 		521E9AD7223113ED00A04FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9AD5223113ED00A04FCC /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		0E8361E1223119E600134C05 /* Vincenzo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vincenzo.storyboard; sourceTree = "<group>"; };
 		0E8361E52231284F00134C05 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		0E8361E722343BED00134C05 /* MovieDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataModel.swift; sourceTree = "<group>"; };
+		0EB75BD52236683C00BA1ADF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		521E9ACE223113ED00A04FCC /* NanoChallenge2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E9AD1223113ED00A04FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		521E9AD3223113ED00A04FCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05222830D49CC96251DC7315 /* Pods_NanoChallenge2.framework in Frameworks */,
+				0EB75BD62236683C00BA1ADF /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +153,7 @@
 		67EE62BB4A3C0BB9BFF01E48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0EB75BD52236683C00BA1ADF /* CloudKit.framework */,
 				D35E3DA1EC7B0EB845823B71 /* Pods_NanoChallenge2.framework */,
 			);
 			name = Frameworks;
@@ -458,13 +462,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge2/NanoChallenge2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NB4DXNB5ZM;
+				DEVELOPMENT_TEAM = ZXLDX6TG3V;
 				INFOPLIST_FILE = NanoChallenge2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dennycaruso.NanoChallenge2;
+				PRODUCT_BUNDLE_IDENTIFIER = dennycaruso.NanoChallenge2Luca;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,13 +482,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge2/NanoChallenge2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NB4DXNB5ZM;
+				DEVELOPMENT_TEAM = ZXLDX6TG3V;
 				INFOPLIST_FILE = NanoChallenge2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dennycaruso.NanoChallenge2;
+				PRODUCT_BUNDLE_IDENTIFIER = dennycaruso.NanoChallenge2Luca;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

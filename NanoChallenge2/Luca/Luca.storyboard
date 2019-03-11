@@ -150,6 +150,10 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="T8C-Ju-DRb">
+                                                <rect key="frame" x="189" y="490" width="37" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="cIu-b1-jXg" firstAttribute="top" secondItem="Ah1-Qi-xx1" secondAttribute="top" constant="20" id="7VI-TR-oNg"/>
@@ -186,15 +190,19 @@
                     <navigationItem key="navigationItem" title="Homepage" id="80B-1F-7v9"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
+                        <outlet property="activity" destination="T8C-Ju-DRb" id="TBC-hG-Gtx"/>
                         <outlet property="actorLabel" destination="80P-4S-VeR" id="C7O-2X-EpR"/>
                         <outlet property="bigTitle" destination="OPA-gk-l8c" id="hsl-ZN-6zE"/>
                         <outlet property="directorLabel" destination="iY1-b0-FTr" id="5Dz-cc-lsD"/>
                         <outlet property="genreLabel" destination="yp9-6C-JrD" id="C6S-c4-UK1"/>
                         <outlet property="imageMovie" destination="Tda-s1-iK4" id="6QX-2l-7fA"/>
+                        <outlet property="imdbImage" destination="iuw-pq-dey" id="nJz-fE-V3T"/>
                         <outlet property="imdbRatings" destination="ilX-IF-Ub7" id="on4-WT-Qjo"/>
+                        <outlet property="metacriticImage" destination="uX0-9f-mrR" id="AKW-XB-ENS"/>
                         <outlet property="metacriticRatings" destination="TXe-rk-9s1" id="D8T-nC-Oeq"/>
                         <outlet property="movieTextField" destination="cIu-b1-jXg" id="veL-I6-CGI"/>
                         <outlet property="nameMovie" destination="5fl-c8-Pde" id="QFr-sB-Til"/>
+                        <outlet property="rottenImage" destination="POO-b1-K53" id="x6e-Gt-YTS"/>
                         <outlet property="rottenRatings" destination="X5T-Ab-e7M" id="0kT-eg-sL7"/>
                         <outlet property="runtimeLabel" destination="lnR-8q-04U" id="WYo-JZ-Ktv"/>
                         <outlet property="searchDisplayController" destination="YXx-Ih-EF0" id="x3s-Ls-RnJ"/>

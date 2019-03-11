@@ -17,6 +17,7 @@ class HomepageViewController: UIViewController {
     let movieDataModel = MovieDataModel()
     
     
+    @IBOutlet var activity: UIActivityIndicatorView!
     
     
     @IBOutlet var webTrailer: WKWebView!
@@ -33,8 +34,11 @@ class HomepageViewController: UIViewController {
     
 
     @IBOutlet var rottenRatings: UILabel!
+    @IBOutlet var rottenImage: UIImageView!
     @IBOutlet var imdbRatings: UILabel!
+    @IBOutlet var imdbImage: UIImageView!
     @IBOutlet var metacriticRatings: UILabel!
+    @IBOutlet var metacriticImage: UIImageView!
     
     
     let MOVIE_URL = "https://www.omdbapi.com/?t="
@@ -48,6 +52,25 @@ class HomepageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activity.isHidden = true
+        nameMovie.isHidden = true
+        yearLabel.isHidden = true
+        genreLabel.isHidden = true
+        runtimeLabel.isHidden = true
+        imageMovie.isHidden = true
+        rottenRatings.isHidden = true
+        imdbRatings.isHidden = true
+        metacriticRatings.isHidden = true
+        rottenImage.isHidden = true
+        imdbImage.isHidden = true
+        metacriticImage.isHidden = true
+        webTrailer.isHidden = true
+        bigTitle.isHidden = true
+        directorLabel.isHidden = true
+        actorLabel.isHidden = true
+        synopsisLabel.isHidden = true
+        
         
     }
     
@@ -118,6 +141,23 @@ class HomepageViewController: UIViewController {
         directorLabel.text = "Director: " + movieDataModel.director
         actorLabel.text = "Actors: " + movieDataModel.actors
         synopsisLabel.text = "Synopsis: \n" + movieDataModel.plot
+        
+        nameMovie.isHidden = false
+        yearLabel.isHidden = false
+        genreLabel.isHidden = false
+        runtimeLabel.isHidden = false
+        imageMovie.isHidden = false
+        rottenRatings.isHidden = false
+        imdbRatings.isHidden = false
+        metacriticRatings.isHidden = false
+        rottenImage.isHidden = false
+        imdbImage.isHidden = false
+        metacriticImage.isHidden = false
+        webTrailer.isHidden = false
+        bigTitle.isHidden = false
+        directorLabel.isHidden = false
+        actorLabel.isHidden = false
+        synopsisLabel.isHidden = false
         
         if movieDataModel.poster == "N/A"{
             self.imageMovie.image = UIImage(named: "No_Image_Available")
