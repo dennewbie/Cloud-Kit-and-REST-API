@@ -145,7 +145,7 @@ class VincenzoViewController : UIViewController {
         }
         var request = URLRequest(url: endpointURL)
         request.httpMethod = "GET"
-        /* Let the data task start, the queue is the operationqueue.main specified in the session.
+        /* Let the data task start, the queue is the operationqueue.main specified in the session, After being added to an operation queue, an operation remains in its queue until it reports that it is finished with its task. An operation queue executes its queued Operation objects based on their priority and readiness. 
          Parameters :
          data is The data returned by the server.
          response is An object that provides response metadata, such as HTTP headers and status code. If you are making an HTTP or HTTPS request, the returned object is actually an HTTPURLResponse object.
