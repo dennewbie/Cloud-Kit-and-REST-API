@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Film View Controller-->
         <scene sceneID="qj9-Dd-tFY">
             <objects>
-                <viewController id="obM-UP-gUY" sceneMemberID="viewController">
+                <viewController id="obM-UP-gUY" customClass="FilmViewController" customModule="NanoChallenge2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vv-Rg-8T2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTP-9I-Fnl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="132"/>
+            <point key="canvasLocation" x="72.463768115942031" y="131.91964285714286"/>
         </scene>
     </scenes>
 </document>
