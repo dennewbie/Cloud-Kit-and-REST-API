@@ -11,6 +11,8 @@
 		0E8361DA2231189500134C05 /* Luca.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361D92231189500134C05 /* Luca.storyboard */; };
 		0E8361E0223119D700134C05 /* Denny.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361DF223119D700134C05 /* Denny.storyboard */; };
 		0E8361E2223119E600134C05 /* Vincenzo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8361E1223119E600134C05 /* Vincenzo.storyboard */; };
+		0E8361E62231284F00134C05 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8361E52231284F00134C05 /* HomepageViewController.swift */; };
+		0E8361E822343BED00134C05 /* MovieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8361E722343BED00134C05 /* MovieDataModel.swift */; };
 		521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9AD1223113ED00A04FCC /* AppDelegate.swift */; };
 		521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9AD3223113ED00A04FCC /* ViewController.swift */; };
 		521E9AD7223113ED00A04FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9AD5223113ED00A04FCC /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 		0E8361D92231189500134C05 /* Luca.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Luca.storyboard; sourceTree = "<group>"; };
 		0E8361DF223119D700134C05 /* Denny.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Denny.storyboard; sourceTree = "<group>"; };
 		0E8361E1223119E600134C05 /* Vincenzo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vincenzo.storyboard; sourceTree = "<group>"; };
+		0E8361E52231284F00134C05 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		0E8361E722343BED00134C05 /* MovieDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataModel.swift; sourceTree = "<group>"; };
 		521E9ACE223113ED00A04FCC /* NanoChallenge2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E9AD1223113ED00A04FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		521E9AD3223113ED00A04FCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				0E8361D92231189500134C05 /* Luca.storyboard */,
+				0E8361E52231284F00134C05 /* HomepageViewController.swift */,
+				0E8361E722343BED00134C05 /* MovieDataModel.swift */,
 			);
 			path = Luca;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			files = (
 				521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */,
 				521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */,
+				0E8361E822343BED00134C05 /* MovieDataModel.swift in Sources */,
+				0E8361E62231284F00134C05 /* HomepageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
