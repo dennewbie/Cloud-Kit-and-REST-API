@@ -50,6 +50,9 @@ class HomepageViewController: UIViewController {
     
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,11 +74,10 @@ class HomepageViewController: UIViewController {
         actorLabel.isHidden = true
         synopsisLabel.isHidden = true
         
-        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
-    
-    
+   
     
     func getMovieData(url: String, urlTrailer: String){
         
@@ -130,6 +132,9 @@ class HomepageViewController: UIViewController {
     
     func updateUIWithMovieData(){
         
+        activity.isHidden = true
+        activity.stopAnimating()
+        
         nameMovie.text = movieDataModel.title
         bigTitle.text = movieDataModel.bigTitle
         rottenRatings.text = movieDataModel.rottenTomatoes
@@ -183,7 +188,8 @@ class HomepageViewController: UIViewController {
         let userMovieName = movieTextField.text!
         let movieName = userMovieName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
         userEnteredANewMovieName(movie: movieName)
-        
+        activity.isHidden = false
+        activity.startAnimating()
     }
     
     func updateMovieTrailerData(json: JSON){
@@ -218,6 +224,8 @@ class HomepageViewController: UIViewController {
         }
         
     }
+    
+    
 }
 
 
