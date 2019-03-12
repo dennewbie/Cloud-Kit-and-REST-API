@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Alfredo Controller-->
         <scene sceneID="xkZ-cO-uyu">
             <objects>
                 <viewController id="LeD-EQ-v52" customClass="alfredoController" customModule="NanoChallenge2" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxz-bG-ghr">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxz-bG-ghr">
                                 <rect key="frame" x="20" y="569" width="363" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -93,7 +93,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="XX7-bx-9vr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="PSm-kH-vWg"/>
                     <connections>
                         <outlet property="attoriArea" destination="cZO-LP-7jC" id="W9w-0o-VFf"/>
                         <outlet property="errore" destination="Fq5-ss-QeN" id="cak-ro-WGO"/>
