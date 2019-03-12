@@ -76,6 +76,16 @@ class FilmViewController: UIViewController, UITextFieldDelegate {
         setupButton()
     }
     
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.3
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     private func setupScrollView() {
         self.view.addSubview(scrollViewFilm)
     
