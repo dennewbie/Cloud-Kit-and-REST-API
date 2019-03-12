@@ -13,7 +13,6 @@ class VincenzoViewController : UIViewController {
     @IBOutlet weak var listOfArticlesLabel: UILabel!
     //To show results
     @IBOutlet weak var articlesCollectionView: UICollectionView!
-    @IBOutlet weak var textArea: UILabel!
     //To research
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
@@ -118,6 +117,7 @@ class VincenzoViewController : UIViewController {
         articlesCollectionView.delegate = self
         articlesCollectionView.dataSource = self
         listOfArticlesLabel.isHidden = true
+        self.searchButton.layer.cornerRadius = 15
         //Register a custom xib file for the cell
         articlesCollectionView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellWithReuseIdentifier: "ArticleCell")
     }
@@ -127,8 +127,8 @@ class VincenzoViewController : UIViewController {
     @IBAction func searchPressed(_ sender: Any) {
         self.searchButton.isHidden = true
         self.view.addSubview(activityIndicator)
-        activityIndicator.center = self.view.center
-        activityIndicator.color = .black
+        activityIndicator.center = CGPoint(x: self.searchButton.frame.midX, y: self.searchButton.frame.midY)
+        activityIndicator.color = .white
         activityIndicator.startAnimating()
         let endPoint = firstPartUrl + textField.text! + lastPart
         startUrlSession(endPoint: endPoint)
@@ -172,7 +172,6 @@ class VincenzoViewController : UIViewController {
                     alert.addAction(okAct)
                     self.present(alert, animated: true, completion: nil)
                     print(responseObject.statusCode)
-                    self.textArea.text = "Client error: " + String(responseObject.statusCode)
                     return
                 default :
                     print("Something went wrong , server error code: ")
@@ -183,7 +182,6 @@ class VincenzoViewController : UIViewController {
                     })
                     alert.addAction(okAct)
                     self.present(alert, animated: true, completion: nil)
-                    self.textArea.text = "Server error: " + String(responseObject.statusCode)
                     return
                 }
                 guard let jsonData = data else {
@@ -250,14 +248,20 @@ extension VincenzoViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = articlesCollectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
         if(articlesNumber > 0){
-            cell.linkButton.setTitle(self.articles[indexPath.row].link.suggested_link_text, for: .normal)
+            var shorterDescription = ""
+            if (self.articles[indexPath.row].link.suggested_link_text.contains("Read the New York Times ")){
+                shorterDescription = self.articles[indexPath.row].link.suggested_link_text.replacingOccurrences(of: "Read the New York Times ", with: "")
+                cell.linkButton.setTitle(shorterDescription, for: .normal)
+            }
             cell.typeLabel.text = self.articles[indexPath.row].link.type.uppercased() + ":"
             cell.articleLink = self.articles[indexPath.row].link.url
             if ( self.articles[indexPath.row].multimedia?.src != nil){
                 cell.previewImage.dowloadFromServer(link: self.articles[indexPath.row].multimedia!.src, contentMode: .scaleAspectFit)
+                cell.imageLink = self.articles[indexPath.row].multimedia!.src
                 }
             else {
                 cell.previewImage.dowloadFromServer(link: "http://www.nytimes.com/services/mobile/img/ios-newsreader-icon.png", contentMode: .scaleAspectFit)
+                cell.imageLink = "http://www.nytimes.com/services/mobile/img/ios-newsreader-icon.png" 
             }
         }
         return cell
