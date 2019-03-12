@@ -474,13 +474,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge2/NanoChallenge2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZXLDX6TG3V;
+				DEVELOPMENT_TEAM = NB4DXNB5ZM;
 				INFOPLIST_FILE = NanoChallenge2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dennycaruso.NanoChallenge2Luca;
+				PRODUCT_BUNDLE_IDENTIFIER = dennycaruso.NanoChallenge2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,13 +494,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge2/NanoChallenge2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZXLDX6TG3V;
+				DEVELOPMENT_TEAM = NB4DXNB5ZM;
 				INFOPLIST_FILE = NanoChallenge2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dennycaruso.NanoChallenge2Luca;
+				PRODUCT_BUNDLE_IDENTIFIER = dennycaruso.NanoChallenge2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
