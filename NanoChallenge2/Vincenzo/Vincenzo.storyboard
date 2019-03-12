@@ -18,39 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search movie articles from NYT by keywords:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwD-1A-Dfe">
-                                <rect key="frame" x="34" y="159" width="347" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search movie articles from NYT by keywords:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwD-1A-Dfe">
+                                <rect key="frame" x="33.5" y="76" width="347" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.98758561639999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ErM-hN-dBh">
-                                <rect key="frame" x="119" y="271" width="176" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzT-pQ-Vfz">
-                                <rect key="frame" x="76" y="481" width="262" height="357"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVJ-fl-MSS">
-                                <rect key="frame" x="183" y="433" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="searchPressed:" destination="iqE-xS-ASm" eventType="touchUpInside" id="xyn-vk-iOk"/>
-                                </connections>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SBO-oq-932">
-                                <rect key="frame" x="20" y="591" width="361" height="247"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SBO-oq-932">
+                                <rect key="frame" x="34" y="304" width="346" height="524"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rmp-Xb-1q0">
                                     <size key="itemSize" width="361" height="245"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -59,22 +35,55 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List of articles found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OC-Gx-Q7N">
-                                <rect key="frame" x="127" y="542" width="161" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of articles found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OC-Gx-Q7N">
+                                <rect key="frame" x="126.5" y="244" width="161" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.98758561639999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVJ-fl-MSS">
+                                <rect key="frame" x="170" y="185" width="74" height="30"/>
+                                <color key="backgroundColor" white="0.98758561639999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchPressed:" destination="iqE-xS-ASm" eventType="touchUpInside" id="xyn-vk-iOk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ErM-hN-dBh">
+                                <rect key="frame" x="126" y="129" width="162" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="faO-Qa-5yX"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3OC-Gx-Q7N" firstAttribute="top" secondItem="bVJ-fl-MSS" secondAttribute="bottom" constant="29" id="1OV-V2-hVj"/>
+                            <constraint firstItem="nwD-1A-Dfe" firstAttribute="centerX" secondItem="Qjf-5u-AOK" secondAttribute="centerX" id="5ll-TL-GbN"/>
+                            <constraint firstItem="ErM-hN-dBh" firstAttribute="centerX" secondItem="Qjf-5u-AOK" secondAttribute="centerX" id="6H0-lB-qtN"/>
+                            <constraint firstItem="Qjf-5u-AOK" firstAttribute="bottom" secondItem="SBO-oq-932" secondAttribute="bottom" constant="34" id="8MZ-vZ-65M"/>
+                            <constraint firstItem="SBO-oq-932" firstAttribute="top" secondItem="3OC-Gx-Q7N" secondAttribute="bottom" constant="39" id="IOS-s8-kTy"/>
+                            <constraint firstItem="bVJ-fl-MSS" firstAttribute="centerX" secondItem="Qjf-5u-AOK" secondAttribute="centerX" id="QVi-ck-dy8"/>
+                            <constraint firstItem="bVJ-fl-MSS" firstAttribute="top" secondItem="ErM-hN-dBh" secondAttribute="bottom" constant="26" id="Rac-W3-NSv"/>
+                            <constraint firstItem="Qjf-5u-AOK" firstAttribute="trailing" secondItem="bVJ-fl-MSS" secondAttribute="trailing" constant="170" id="U5A-QK-46a"/>
+                            <constraint firstItem="nwD-1A-Dfe" firstAttribute="top" secondItem="Qjf-5u-AOK" secondAttribute="top" constant="32" id="WB9-oG-RBj"/>
+                            <constraint firstItem="Qjf-5u-AOK" firstAttribute="trailing" secondItem="SBO-oq-932" secondAttribute="trailing" constant="34" id="Wuu-RW-TvE"/>
+                            <constraint firstItem="bVJ-fl-MSS" firstAttribute="leading" secondItem="Qjf-5u-AOK" secondAttribute="leading" constant="170" id="ayK-J4-jfS"/>
+                            <constraint firstItem="ErM-hN-dBh" firstAttribute="top" secondItem="nwD-1A-Dfe" secondAttribute="bottom" constant="32" id="gyF-Mr-uL9"/>
+                            <constraint firstItem="SBO-oq-932" firstAttribute="leading" secondItem="Qjf-5u-AOK" secondAttribute="leading" constant="34" id="k3L-V0-RiP"/>
+                            <constraint firstItem="3OC-Gx-Q7N" firstAttribute="centerX" secondItem="Qjf-5u-AOK" secondAttribute="centerX" id="w0P-q0-iM6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Qjf-5u-AOK"/>
                     </view>
                     <connections>
                         <outlet property="articlesCollectionView" destination="SBO-oq-932" id="TNo-Ub-iDT"/>
                         <outlet property="listOfArticlesLabel" destination="3OC-Gx-Q7N" id="AO6-fo-bTc"/>
                         <outlet property="searchButton" destination="bVJ-fl-MSS" id="vTR-KY-mzd"/>
-                        <outlet property="textArea" destination="pzT-pQ-Vfz" id="jtY-hI-hVs"/>
                         <outlet property="textField" destination="ErM-hN-dBh" id="jTT-SS-dRd"/>
                     </connections>
                 </viewController>
