@@ -31,6 +31,7 @@
 		521F59A8223666D800FE20FE /* CloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F59A7223666D800FE20FE /* CloudKitTableViewController.swift */; };
 		521F59AC22366B3500FE20FE /* CloudKitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F59AB22366B3500FE20FE /* CloudKitTableViewCell.swift */; };
 		522201CC2237A62B00930D76 /* DennyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522201CB2237A62B00930D76 /* DennyTabBarController.swift */; };
+		9F1C36522237B9280062B32C /* alfredoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C36512237B9280062B32C /* alfredoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		521F59A7223666D800FE20FE /* CloudKitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitTableViewController.swift; sourceTree = "<group>"; };
 		521F59AB22366B3500FE20FE /* CloudKitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitTableViewCell.swift; sourceTree = "<group>"; };
 		522201CB2237A62B00930D76 /* DennyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DennyTabBarController.swift; sourceTree = "<group>"; };
+		9F1C36512237B9280062B32C /* alfredoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alfredoController.swift; sourceTree = "<group>"; };
 		D1CC6CFE3BBBB33B679D4A6C /* Pods-NanoChallenge2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge2.release.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2.release.xcconfig"; sourceTree = "<group>"; };
 		D35E3DA1EC7B0EB845823B71 /* Pods_NanoChallenge2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NanoChallenge2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E061DF3A6D8EC22C7FADDA12 /* Pods-NanoChallenge2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				521E9B0122311BD500A04FCC /* Alfredo.storyboard */,
+				9F1C36512237B9280062B32C /* alfredoController.swift */,
 			);
 			path = Alfredo;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1C36522237B9280062B32C /* alfredoController.swift in Sources */,
 				521E9AD4223113ED00A04FCC /* ViewController.swift in Sources */,
 				521F59AC22366B3500FE20FE /* CloudKitTableViewCell.swift in Sources */,
 				521E9AD2223113ED00A04FCC /* AppDelegate.swift in Sources */,
