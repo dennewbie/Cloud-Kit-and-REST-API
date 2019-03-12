@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class ArticleCell: UICollectionViewCell {
 
@@ -14,16 +15,55 @@ class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var previewImage: UIImageView!
     var articleLink : URL?
+    var imageLink : String?
+    //Data will be saved in a private database on icloud
+    //let database = CKContainer.default().privateCloudDatabase
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.linkButton.layer.cornerRadius = 15
         self.previewImage.layer.cornerRadius = 15
+        //self.saveButton.layer.cornerRadius = 15
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(gesture:)))
+        
+        // add it to the image view;
+        previewImage.addGestureRecognizer(tapGesture)
     }
 
     @IBAction func goToLink(_ sender: Any) {
         UIApplication.shared.open(articleLink!)
     }
+    /*@IBAction func saveButtonPressed(_ sender: Any) {
+        //Steps for save a new link
+        //Nome della tabella
+        let linkToSave = CKRecord(recordType: "LinkToArticle")
+        //Nome del campo
+        linkToSave["Link"] = self.articleLink!.absoluteString
+        linkToSave["Image"] = self.imageLink!
+        database.save(linkToSave) { (record, error) in
+            if ( error != nil) {
+                guard record != nil else { return }
+                print("Saved the record: ")
+                print(record)
+            }
+            else {
+                print("ERROR IN SAVING: ")
+                print(error)
+            }
+        }
+            
+        
+    }
+    */
+   @objc func imageTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        if let imageView = gesture.view as? UIImageView {
+            UIApplication.shared.open(self.articleLink!)
+            //Here you can initiate your new ViewController
+            
+        }
+    }
+
 }
 
 
@@ -47,8 +87,6 @@ extension UIImageView {
         dowloadFromServer(url: url, contentMode: mode)
     }
 
-    
-    
     
     
 }
