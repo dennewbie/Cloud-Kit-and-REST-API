@@ -26,6 +26,12 @@ class CloudKitTableViewController: UIViewController {
         cloudKitTableView.dataSource = self
     }
     
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     @IBAction func reloadData(_ sender: Any?) {
         filmSearched.removeAll()
         cloudKitTableView.reloadData()

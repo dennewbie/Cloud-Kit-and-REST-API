@@ -29,6 +29,7 @@
 		521E9B0222311BD500A04FCC /* Alfredo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9B0122311BD500A04FCC /* Alfredo.storyboard */; };
 		521F59A8223666D800FE20FE /* CloudKitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F59A7223666D800FE20FE /* CloudKitTableViewController.swift */; };
 		521F59AC22366B3500FE20FE /* CloudKitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F59AB22366B3500FE20FE /* CloudKitTableViewCell.swift */; };
+		522201CC2237A62B00930D76 /* DennyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522201CB2237A62B00930D76 /* DennyTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		521E9B0122311BD500A04FCC /* Alfredo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alfredo.storyboard; sourceTree = "<group>"; };
 		521F59A7223666D800FE20FE /* CloudKitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitTableViewController.swift; sourceTree = "<group>"; };
 		521F59AB22366B3500FE20FE /* CloudKitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitTableViewCell.swift; sourceTree = "<group>"; };
+		522201CB2237A62B00930D76 /* DennyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DennyTabBarController.swift; sourceTree = "<group>"; };
 		D1CC6CFE3BBBB33B679D4A6C /* Pods-NanoChallenge2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge2.release.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2.release.xcconfig"; sourceTree = "<group>"; };
 		D35E3DA1EC7B0EB845823B71 /* Pods_NanoChallenge2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NanoChallenge2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E061DF3A6D8EC22C7FADDA12 /* Pods-NanoChallenge2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoChallenge2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NanoChallenge2/Pods-NanoChallenge2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				0E0BBCEE22365AB1001252AC /* DennyViewController.swift */,
 				0E0BBCEF22365AB2001252AC /* YearPickerView.swift */,
 				0E0BBCED22365AB1001252AC /* CloudKitViewController.swift */,
+				522201CB2237A62B00930D76 /* DennyTabBarController.swift */,
 			);
 			path = Denny;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				0E0BBCF322365AB2001252AC /* YearPickerView.swift in Sources */,
 				0E0BBCF222365AB2001252AC /* DennyViewController.swift in Sources */,
 				0E0BBCF122365AB2001252AC /* CloudKitViewController.swift in Sources */,
+				522201CC2237A62B00930D76 /* DennyTabBarController.swift in Sources */,
 				521F59A8223666D800FE20FE /* CloudKitTableViewController.swift in Sources */,
 				0E8361E62231284F00134C05 /* HomepageViewController.swift in Sources */,
 				0E0BBCFC22365ACF001252AC /* ReviewModel.swift in Sources */,
