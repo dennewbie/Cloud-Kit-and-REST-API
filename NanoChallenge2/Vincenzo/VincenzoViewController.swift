@@ -120,6 +120,8 @@ class VincenzoViewController : UIViewController {
         self.searchButton.layer.cornerRadius = 15
         //Register a custom xib file for the cell
         articlesCollectionView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellWithReuseIdentifier: "ArticleCell")
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     

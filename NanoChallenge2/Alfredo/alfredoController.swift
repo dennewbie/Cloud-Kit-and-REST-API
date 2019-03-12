@@ -49,6 +49,8 @@ class alfredoController: UIViewController {
         //        print("attori del film = ", attori)
         //        let weather: NSDictionary = weather_array[0] as! NSDictionary
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
     }
     @IBAction func cercaAction(_ sender: UIButton) {
         
