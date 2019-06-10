@@ -21,6 +21,6 @@ How to store data in CloudKit?
 
 
 <video poster="saveToCloud.jpg" width="618" height="347" controls preload> 
-    <source src="saveToCloudVideo.mp4" media="only screen and (min-device-width: 568px)"></source> 
-    <source src="saveToCloudVideo.webm"></source> 
+    <source src="saveToCloud.mp4" media="only screen and (min-device-width: 568px)"></source> 
+    <source src="saveToCloud.webm"></source> 
 </video>
