@@ -20,7 +20,4 @@ How to perform URLSession Tasks?
 How to store data in CloudKit?
 
 
-<video poster="saveToCloud.jpg" width="618" height="347" controls preload> 
-    <source src="saveToCloud.mp4" media="only screen and (min-device-width: 568px)"></source> 
-    <source src="saveToCloud.webm"></source> 
-</video>
+## Click on DEMO.mp4 to see how it works
